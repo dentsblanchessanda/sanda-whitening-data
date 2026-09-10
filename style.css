@@ -43,7 +43,7 @@ main, footer { width: min(980px, calc(100% - 40px)); margin-inline: auto; }
 
 .intro { padding: 72px 0 38px; }
 .eyebrow, .section-number { margin: 0 0 10px; color: var(--blue-deep); font-weight: 800; letter-spacing: .16em; font-size: .78rem; }
-h1 { margin: 0; max-width: 760px; font-size: clamp(2.35rem, 6vw, 4.7rem); line-height: 1.14; letter-spacing: -.04em; }
+h1 { margin: 0; max-width: 900px; font-size: clamp(2.35rem, 5vw, 4rem); line-height: 1.14; letter-spacing: -.04em; }
 h1 span { color: var(--blue-deep); }
 .lead { max-width: 700px; margin: 24px 0 0; color: var(--muted); font-size: 1.06rem; }
 
@@ -105,6 +105,7 @@ footer p { margin: 2px 0; }
 @media (max-width: 700px) {
   .header-inner, main, footer { width: min(100% - 28px, 980px); }
   .intro { padding-top: 48px; }
+  h1 { font-size: clamp(1.75rem, 8.5vw, 2.35rem); }
   .summary, .comparison-grid { grid-template-columns: 1fr; }
   .summary { margin-bottom: 46px; }
   .section-heading { align-items: flex-start; flex-direction: column; }
