@@ -1,0 +1,15 @@
+tooth_group,change_band,count,total,share_percent
+front,0,14,193,7.3
+front,1,2,193,1.0
+front,2,61,193,31.6
+front,4,66,193,34.2
+front,6,36,193,18.7
+front,8_or_more,12,193,6.2
+front,other,2,193,1.0
+canine,0,16,193,8.3
+canine,1,2,193,1.0
+canine,2,74,193,38.3
+canine,4,61,193,31.6
+canine,6,23,193,11.9
+canine,8_or_more,15,193,7.8
+canine,other,2,193,1.0
