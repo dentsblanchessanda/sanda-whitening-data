@@ -24,6 +24,7 @@ input:checked+label{background:#59403c;color:white;border-color:#59403c;font-wei
 input:focus-visible+label,a:focus-visible,summary:focus-visible{outline:3px solid #35678d;outline-offset:3px}
 .result{padding:clamp(16px,4vw,28px);border:1px solid #d8c8ba;background:#fff;border-radius:16px}
 #amount{font:600 clamp(36px,8vw,54px)/1.3 Georgia,serif;font-variant-numeric:tabular-nums;color:#774534;margin:3px 0}
+.share{display:block;width:fit-content;margin:14px auto 0;padding:8px 16px;border:1px solid #85766d;border-radius:8px;text-align:center;font-weight:600}
 #difference{font-weight:600}
 dl{margin:15px 0 0;border-top:1px solid #e8dfd6;padding-top:10px}
 dl div{display:flex;justify-content:space-between;gap:12px}dd{margin:0;font-variant-numeric:tabular-nums}
@@ -52,6 +53,7 @@ footer{padding:20px 0 30px;font-size:13px;color:#675951}
 <div class="result" id="result" aria-live="polite" aria-atomic="true" hidden>
 <h2 id="plan"></h2><p id="amount"></p><p id="difference"></p>
 <dl><div><dt id="per-label">都度払い</dt><dd id="per-total"></dd></div><div><dt>1か月通い放題</dt><dd>11,000円</dd></div></dl>
+<a class="share" id="line-share">この比較結果をLINEで送る</a>
 </div>
 <a class="book" id="booking" href="https://beauty.hotpepper.jp/kr/slnH000750426/">ホットペッパービューティーで空席・予約を見る ↗</a>
 <section><h2>来店回数別の支払総額</h2>
@@ -89,6 +91,15 @@ function showPrice() {
   document.querySelector('#difference').textContent = (payPerVisit ? '通い放題' : '都度払い') + 'より' + yen(Math.abs(total - monthly)) + 'お得です。';
   document.querySelector('#per-label').textContent = '都度払い（' + visits + '回・割引' + count + '回）';
   document.querySelector('#per-total').textContent = yen(total);
+  const message = [
+    'ダンブランシュサンダ｜再来ホワイトニング（1回来店につき8分×2回）',
+    `月${visits}回・店頭500円引きを${count}回適用した場合`,
+    `都度払いは合計${yen(total)}、1か月通い放題は${yen(monthly)}。`,
+    `${payPerVisit ? '都度払い' : '通い放題'}が${yen(Math.abs(total - monthly))}お得です。`,
+    '料金を計算する ' + document.querySelector('link[rel="canonical"]').href,
+    '空席・予約を見る ' + document.querySelector('#booking').href
+  ].join('\n');
+  document.querySelector('#line-share').href = 'https://line.me/R/share?text=' + encodeURIComponent(message);
 }
 picker.addEventListener('change', showPrice);
 document.querySelector('#discount').addEventListener('change', showPrice);
