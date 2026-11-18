@@ -48,6 +48,7 @@ footer{padding:20px 0 30px;font-size:13px;color:#675951}
 <input type="radio" name="visits" id="three" value="3"><label for="three">3回</label>
 <input type="radio" name="visits" id="four" value="4"><label for="four">4回</label>
 </div></fieldset>
+<p id="discount-row" hidden><label for="discount">うち、前回から2週間以内の店頭500円引きが適用される回数 <select id="discount"></select></label></p>
 <div class="result" id="result" aria-live="polite" aria-atomic="true" hidden>
 <h2 id="plan"></h2><p id="amount"></p><p id="difference"></p>
 <dl><div><dt id="per-label">都度払い</dt><dd id="per-total"></dd></div><div><dt>1か月通い放題</dt><dd>11,000円</dd></div></dl>
@@ -61,8 +62,8 @@ footer{padding:20px 0 30px;font-size:13px;color:#675951}
 <tr><th scope="row">3回</th><td>13,500円</td><td>11,000円</td></tr>
 <tr><th scope="row">4回</th><td>18,000円</td><td>11,000円</td></tr>
 </tbody></table>
-<p>予定が月2回なら都度払いで2,000円お得です。1か月の利用期間内に3回以上通う予定なら、通い放題の方が支払総額を抑えられます。</p>
-<p class="note">比較対象は再来の都度払いと1か月基本プランの2種類です。初回・学割・回数券の料金は計算対象外です。</p></section>
+<p>通常料金で月2回なら都度払いで2,000円お得です。1か月の利用期間内に3回以上通う予定なら、通い放題の方が支払総額を抑えられます。</p>
+<p class="note">比較対象は再来の都度払いと1か月基本プランの2種類です。一覧表は通常料金での比較です。上の計算欄では対象クーポンの店頭500円引きを来店ごとに反映できます。初回・学割・回数券は対象外です。</p></section>
 <details><summary>兵庫・大阪の公開例で見る「1か月」の違い</summary>
 <p><strong>兵庫県尼崎市・武庫之荘</strong>には、当店と同じく1か月だけ利用できる11,000円の通い放題があります。翌月も通えるか分からない方は、申し込み時に利用期間を確認すると選びやすくなります。<a href="https://beauty.hotpepper.jp/kr/slnH000681751/coupon/">尼崎の掲載メニュー</a></p>
 <p><strong>大阪・心斎橋に店舗がある系列</strong>の月額4,370円のプランでは、2026年9月17日以降の新規契約に最低4か月の条件があり、4か月分の月会費だけで17,480円です。初回費用には別途規定があり、キャンペーンで変わります。照射内容も異なるため、ここでは月額契約の条件を紹介しています。<a href="https://whiteningbar.jp/law/">月会費・初回費用・退会条件</a></p>
@@ -74,16 +75,24 @@ const result = document.querySelector('#result');
 const yen = value => value.toLocaleString('ja-JP') + '円';
 function showPrice() {
   const visits = Number(picker.querySelector(':checked').value);
-  const total = visits * 4500;
+  const discounts = document.querySelector('#discount');
+  const count = Math.min(Number(discounts.value), visits);
+  if (discounts.options.length !== visits + 1) {
+    discounts.replaceChildren(...Array.from({length: visits + 1}, (_, i) => new Option(i + '回', i)));
+    discounts.value = String(count);
+  }
+  const total = visits * 4500 - count * 500;
   const monthly = 11000;
   const payPerVisit = total < monthly;
   document.querySelector('#plan').textContent = '月' + visits + '回なら、' + (payPerVisit ? '都度払い' : '1か月通い放題');
   document.querySelector('#amount').textContent = yen(Math.min(total, monthly));
   document.querySelector('#difference').textContent = (payPerVisit ? '通い放題' : '都度払い') + 'より' + yen(Math.abs(total - monthly)) + 'お得です。';
-  document.querySelector('#per-label').textContent = '都度払い（4,500円×' + visits + '回）';
+  document.querySelector('#per-label').textContent = '都度払い（' + visits + '回・割引' + count + '回）';
   document.querySelector('#per-total').textContent = yen(total);
 }
 picker.addEventListener('change', showPrice);
+document.querySelector('#discount').addEventListener('change', showPrice);
+document.querySelector('#discount-row').hidden = false;
 showPrice();
 picker.hidden = false;
 result.hidden = false;
