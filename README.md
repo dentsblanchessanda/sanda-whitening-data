@@ -17,3 +17,9 @@
 - [ダンブランシュサンダ｜HOT PEPPER Beauty](https://beauty.hotpepper.jp/kr/slnH000750426/)
 
 集計CSVはCC BY 4.0で公開されています。ページの文章・デザイン・コードは同ライセンスの対象外です。
+
+## 三田市の公開メニュー調査（2026年11月19日）
+
+[4サロンの料金・照射時間・通い放題の比較](https://dentsblanchessanda.github.io/sanda-whitening-data/provider-conditions/)
+
+38件のメニュー記録、店舗・設備、出典、候補確認記録をCSVで公開しています。調査方法とライセンスは provider-conditions/README.md を参照してください。

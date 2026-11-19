@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "title": "三田市のホワイトニング料金・照射時間・通い放題：公開情報調査（4サロン、2026年11月19日）",
+    "upload_type": "dataset",
+    "description": "<p>対象は兵庫県三田市内に所在地があり、公式サイトまたは店舗自身の掲載する予約サイトでホワイトニングの具体的な料金と照射時間を確認できた4サロン。歯科医院・ジム併設型は対象外です。市内全店の悉皆調査ではありません。一般の初回・再来都度払い・月額プランを中心に収録し、回数券と一部の学生向け月額を補足しました。ペア割・紹介割・誕生日特典・全学生向け都度メニュー・任意追加オプションを含む全クーポンの網羅ではありません。</p><p>初回・再来・月額を分離し、照射分数、回数制限、最低継続期間、解約金、備品費用、ケア、設備を出典付きで記録。38メニュー記録。編集・公開者は比較対象のダンブランシュサンダです。</p>",
+    "creators": [
+      {
+        "name": "ダンブランシュサンダ（dents Blanches SANDA）"
+      }
+    ],
+    "publication_date": "2026-11-19",
+    "version": "1.0.0",
+    "license": "cc-by-4.0",
+    "keywords": [
+      "三田市",
+      "三田",
+      "ホワイトニング",
+      "セルフホワイトニング",
+      "料金",
+      "照射時間",
+      "通い放題",
+      "Sanda",
+      "whitening"
+    ],
+    "related_identifiers": [
+      {
+        "identifier": "https://dentsblanchessanda.github.io/sanda-whitening-data/provider-conditions/",
+        "relation": "isSupplementTo",
+        "scheme": "url"
+      },
+      {
+        "identifier": "https://beauty.hotpepper.jp/kr/slnH000750426/",
+        "relation": "isCompiledBy",
+        "scheme": "url"
+      },
+      {
+        "identifier": "https://dents-blanches-sanda.com/",
+        "relation": "isCompiledBy",
+        "scheme": "url"
+      }
+    ]
+  }
+}

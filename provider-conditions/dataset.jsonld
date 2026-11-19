@@ -1,0 +1,65 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "三田市のホワイトニング料金・照射時間・通い放題：公開情報調査（4サロン、2026年11月19日）",
+  "description": "対象は兵庫県三田市内に所在地があり、公式サイトまたは店舗自身の掲載する予約サイトでホワイトニングの具体的な料金と照射時間を確認できた4サロン。歯科医院・ジム併設型は対象外です。市内全店の悉皆調査ではありません。一般の初回・再来都度払い・月額プランを中心に収録し、回数券と一部の学生向け月額を補足しました。ペア割・紹介割・誕生日特典・全学生向け都度メニュー・任意追加オプションを含む全クーポンの網羅ではありません。",
+  "url": "https://dentsblanchessanda.github.io/sanda-whitening-data/provider-conditions/",
+  "datePublished": "2026-11-19",
+  "dateModified": "2026-11-19",
+  "version": "1.0.0",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "creator": {
+    "@type": "Organization",
+    "name": "ダンブランシュサンダ（dents Blanches SANDA）",
+    "url": "https://beauty.hotpepper.jp/kr/slnH000750426/",
+    "sameAs": "https://dents-blanches-sanda.com/"
+  },
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "兵庫県三田市"
+  },
+  "temporalCoverage": "2026-11-19",
+  "measurementTechnique": "公式サイト・店舗掲載予約ページの公開メニューを手作業で抽出",
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "name": "plans.csv",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://dentsblanchessanda.github.io/sanda-whitening-data/provider-conditions/plans.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "providers.csv",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://dentsblanchessanda.github.io/sanda-whitening-data/provider-conditions/providers.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "sources.csv",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://dentsblanchessanda.github.io/sanda-whitening-data/provider-conditions/sources.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "screening.csv",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://dentsblanchessanda.github.io/sanda-whitening-data/provider-conditions/screening.csv"
+    }
+  ],
+  "isBasedOn": [
+    "https://dents-blanches-sanda.com/price-course/",
+    "https://beauty.hotpepper.jp/kr/slnH000750426/coupon/",
+    "https://dents-blanches-sanda.com/whitening/",
+    "https://dents-blanches-sanda.com/hygiene/",
+    "https://beauty.hotpepper.jp/kr/slnH000662041/coupon/",
+    "https://beauty.hotpepper.jp/kr/slnH000662041/",
+    "https://luange-whitening.com/menu/",
+    "https://beauty.hotpepper.jp/kr/slnH000781331/coupon/",
+    "https://luange-whitening.com/",
+    "https://lunacrescente-esthetic.com/service/whitening/",
+    "https://lunacrescente-esthetic.com/access/",
+    "https://beauty.hotpepper.jp/kr/slnH000564598/coupon/",
+    "https://www.ekiten.jp/shop_25817384/menu/",
+    "https://chocozap.jp/studios/889"
+  ]
+}
